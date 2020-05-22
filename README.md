@@ -8,7 +8,7 @@
 
 2. Small demo of only calculating score and showing risk:
 
-[download and directly open it] (https://github.com/YJZFlora/vascular_surgery_app/blob/master/index.html)
+[download and directly open it](https://github.com/YJZFlora/vascular_surgery_app/blob/master/index.html)
 
 3. Do we need register/login/logout functions? (Authentication)
 
