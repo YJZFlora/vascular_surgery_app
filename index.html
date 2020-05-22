@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>surgery APP</title>
+  </head>
+  <body>
+    <form class="main" action="index.html" method="post">
+      <input type="checkbox" id="BMI" name="bmi"  > BMI>30
+      <input type="checkbox" id="smoker" name="smoking" /> Smoker
+      <input type="checkbox" id="psg"/> Reoperation
+      <input type="checkbox" id="esrd" /> ESRD
+      <button type="button" name="button" id="calculate">calculate</button>
+    </form>
+
+    <p>Patient score:</p>
+    <p id='score'></p>
+    <p id='risk'></p>
+
+
+    <script type="text/javascript">
+
+      document.getElementById("calculate").onclick = function() {calculate()};
+
+      function calculate() {
+        var score = 0;
+        var BMI =  document.getElementById("BMI");
+        var smoker =  document.getElementById("smoker");
+        var psg =  document.getElementById("psg");
+        var esrd =  document.getElementById("esrd");
+        if (BMI.checked) {
+          score += 2;
+        }
+        if (smoker.checked) {
+          score += 2;
+        }
+        if (psg.checked) {
+          score += 2;
+        }
+        if (esrd.checked) {
+          score += 1;
+        }
+        document.getElementById("score").innerHTML = score;
+        
+        if(score <= 2) {
+          document.getElementById("risk").innerHTML = "LOW RISK";
+        } else if (score <= 4) {
+          document.getElementById("risk").innerHTML = "MEDIUM RISK";
+        } else {
+          document.getElementById("risk").innerHTML = "HIGH RISK";
+        }
+
+      }
+    </script>
+  </body>
+</html>
